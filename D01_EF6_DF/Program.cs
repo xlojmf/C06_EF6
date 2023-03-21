@@ -13,6 +13,9 @@ namespace D01_EF6_DF
         {
             // atenção que estamos a escrever na bd e depois a gravar ois registos ja existem!!!!!
 
+            //TODO JMF: INSERIR UM EMPREGRADO COM OS NOSSOS DADOS NUM DOS TERRITORIOS CRIADOS ANTERIORMENTE
+
+
             Utility.SetUnicodeConsole();
 
             #region Declarar o contexto de db
