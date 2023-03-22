@@ -8,7 +8,7 @@ namespace E01_CF_BooksDB
 {
     public static class PublisherRepository
     {
-        public static void CreatePublisher(BooksModel db)
+        public static void CreatePublisher()
         {
             var publishers = new List<Publisher>
               {
@@ -16,16 +16,22 @@ namespace E01_CF_BooksDB
             new Publisher { Name = "Ze Maria"},
 
               };
-            db.Publisher.AddRange(publishers);
+            using (BooksModel db = new BooksModel())
+            {
+                db.Publisher.AddRange(publishers);
             db.SaveChanges();
+            }
         }
 
-        public static void ListPublisher(BooksModel db)
+        public static void ListPublisher()
         {
-            var queryPublisher = db.Publisher.Select(b => b).OrderBy(b => b.Name);
+            using (BooksModel db = new BooksModel())
+            {
+                var queryPublisher = db.Publisher.Select(b => b).OrderBy(b => b.Name);
             // linq foreach
             queryPublisher.ToList().ForEach(item => Console.WriteLine($"{item.PublisherID} - {item.Name}"));
         }
+    }
 
         public static void UpdatePublisher(Publisher publisher, BooksModel db)
         {

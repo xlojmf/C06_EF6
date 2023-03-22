@@ -13,13 +13,16 @@ namespace E01_CF_BooksDB
         {
             Utility.SetUnicodeConsole();
 
+            //using db usar em cada metodo , dentro do methjod para garantir segurança
+
             //Versão simples
             using (var db = new BooksModel())
             {
-                BookRepository.CreateBook(db);
-                PublisherRepository.CreatePublisher(db);
-                BookRepository.ListBooks(db);
-                PublisherRepository.ListPublisher(db);
+                BookRepository.CreateBook();
+                //BookRepository.CreateBook(db,1); por exemplo passar dados e fazer verificacoes, passar todo o trabalho para os repositorios
+                PublisherRepository.CreatePublisher();
+                BookRepository.ListBooks();
+                PublisherRepository.ListPublisher();
 
             }
 
