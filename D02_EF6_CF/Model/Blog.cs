@@ -13,8 +13,6 @@ namespace D02_EF6_CF.Model
         #region Scalar properties  --  Propriedades escalaveis
         public int BlogId {get; set;} // sabe q é pk + identity
         public string Name { get; set;}
-        //public string BlogDescription { get; set;} 
-        //public string BlogType { get; set;}
         #endregion
 
 

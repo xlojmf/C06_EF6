@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Model\Blog.cs" />
     <Compile Include="Model\BlogContext.cs" />
+    <Compile Include="Model\BlogRepository.cs" />
     <Compile Include="Model\Post.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

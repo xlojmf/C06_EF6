@@ -13,7 +13,19 @@ namespace D02_EF6_CF
         static void Main(string[] args)
         {
             Utility.SetUnicodeConsole();
-            var db = new BlogContext(); 
+
+            //Versão simples
+            using (var db = new BlogContext())
+            {
+                BlogRepository.CreateBlog(db);
+                BlogRepository.CreatePost(db);
+                BlogRepository.ListBlog(db);
+                BlogRepository.ListPost(db);
+
+            }
+
+
+            /*var db = new BlogContext(); VERSÂO V0 
 
             using (db)
             {
@@ -57,7 +69,9 @@ namespace D02_EF6_CF
                 // linq foreach
                 queryPost.ToList().ForEach(item => Console.WriteLine($"{item.BlogId} - {item.Title}  - {item.Content}"));
 
-            }
+            }*/
+
+
 
             Utility.TerminateConsole();
         }
